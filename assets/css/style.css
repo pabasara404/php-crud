@@ -1,0 +1,36 @@
+.my-btn{
+    background-color :#448ee4;
+    color : white;
+    padding : 4px 8px;
+    text-decoration: none;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    border-radius: 5px;
+}
+.my-btn:hover{
+    background-color:royalblue;
+}
+.my-delete-btn{
+    background-color :#e46b6b;
+}
+.my-detail-btn{
+    background-color :#70d667;
+}
+.my-update-btn{
+    background-color :#d667b1;
+}
+.my-delete-btn, .my-update-btn, .my-detail-btn{
+    color : white;
+    padding : 4px 8px;
+    text-decoration: none;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    border-radius: 5px;
+}
+.my-delete-btn:hover{
+    background-color:#c95656;
+}
+.my-detail-btn:hover{
+    background-color:#67b860;
+}
+.my-update-btn:hover{
+    background-color:#af6295;
+}

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>Document</title>
+    <link href="../../assets/css/style.css" rel="stylesheet">
+</head>
+<body>
+    <h1>Student form</h1>
+    <form id="form" action="insert.php" method="POST">
+        
+        <table cellspacing="5">
+            <tr valign="top"><td> <label for="">Name</label>:</td>
+                <td><input type="text" name="name" id="nameField" ><br><span id="nameFieldMsg" class="errMsg"></span></td></tr>
+            <tr valign="top"><td><label for="">City</label>:</td>
+                <td><input type="text" name="city" id="cityField">
+                    <br><span id="cityFieldMsg" class="errMsg"></span></td></tr>
+            <tr valign="top"><td><label for="">NIC</label>:</td>
+                <td><input type="text" name="nic" id="nicField">
+                    <br><span id="nicFieldMsg" class="errMsg"></span></td></tr>
+            <tr><td colspan="2" style="text-align:right;"><button class="my-btn"  type="submit">Add</button></td></tr>
+        </table>
+    </form>
+    <br>
+    <br>
+    <br>
+    <a class="my-btn" href="./table.php">Show all student</a>
+</body>
+
+<script>
+    const form=document.getElementById('form');
+    const nameField=document.getElementById('nameField');
+    const cityField=document.getElementById('cityField');
+    const nicField=document.getElementById('nicField');
+    const nameFieldMsg=document.getElementById('nameFieldMsg');
+    const cityFieldMsg=document.getElementById('cityFieldMsg');
+    const nicFieldMsg=document.getElementById('nicFieldMsg');
+
+    function validateName(){
+        const name=nameField.value.trim();
+        const crit1=name!="";
+        const crit2=name.length>=3;
+        if(!crit1){
+            nameFieldMsg.innerHTML='Name is required';
+            return false;
+
+        }
+        if(!crit2){
+            nameFieldMsg.innerHTML='name must have at least 3 characters';
+            return false;
+
+        }
+        nameFieldMsg.innerHTML="";
+        return true;
+    }
+
+    function validateCity(){
+        const city=cityField.value.trim();
+        const crit1=city!="";
+        const crit2=city.length>=2;
+        if(!crit1){
+            cityFieldMsg.innerHTML='City is required!';
+            return false;
+
+        }
+        if(!crit2){
+            cityFieldMsg.innerHTML='city must have at least 2 characters';
+            return false;
+
+        }
+        cityFieldMsg.innerHTML="";
+        return true;
+    }
+
+    function validateNIC(){
+        const nic=nicField.value.trim();
+        const crit1=nic!="";
+        const crit2=nic.length===10 || nic.length===12;
+        if(!crit1){
+            nicFieldMsg.innerHTML='NIC is required!';
+            return false;
+
+        }
+        if(!crit2){
+            nicFieldMsg.innerHTML='NIC name must have at least 10 or 12 characters';
+            return false;
+
+        }
+        nicFieldMsg.innerHTML="";
+        return true;
+    }
+
+    form.addEventListener('submit',function(e){
+        
+        const nameValidity=validateName();
+        const cityValidity=validateCity();
+        const nicValidity=validateNIC();
+
+        if(!nameValidity||!cityValidity||!nicValidity) {
+            e.preventDefault();}
+
+    });
+</script>
+<style>
+    .errMsg{
+        color: #b42b2b;
+        font-size: small;
+
+    }
+</style>
+</html>
